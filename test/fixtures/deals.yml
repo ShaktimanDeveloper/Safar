@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  destination_address: MyString
+  responder: one
+  provider: one
+  amount: 9.99
+
+two:
+  destination_address: MyString
+  responder: two
+  provider: two
+  amount: 9.99

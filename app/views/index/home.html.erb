@@ -1,0 +1,10 @@
+
+
+ <% if user_signed_in? %>
+    <li>
+        <%=link_to "I need a ride" , new_responder_path %>
+    </li>
+    <li>
+        <%=link_to "I can give a ride today" , new_provider_path%>
+    </li>
+<% end %>

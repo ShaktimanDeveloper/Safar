@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Responders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @responders.each do |responder| %>
+      <tr>
+        <td><%= responder.name %></td>
+        <td><%= responder.address %></td>
+        <td><%= link_to 'Confirm Pickup', pickup_confirmation_path(:responder => responder.id ) %></td>
+        <td><%= link_to 'Show', responder %></td>
+        <td><%= link_to 'Edit', edit_responder_path(responder) %></td>
+        <td><%= link_to 'Destroy', responder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Responder', new_responder_path %>
