@@ -1,2 +1,15 @@
-<h1>Pickup#confirmation</h1>
-<p>Find me in app/views/pickup/confirmation.html.erb</p>
+<h1>Pickup Confirmation</h1>
+
+<h2>Driver Information:</h2><br>
+<h3>Driver Name: <%= @provider.name %><h3>
+<h3>Driver Destination: <%= @provider.address %><h3>
+
+<h2>Passenger Information:</h2><br>
+<h3>Passenger Name: <%= @responder.first.user.email %><h3>
+<%= form_tag(root_path, method: "get") do %>
+      <%= label_tag(:q, "Choose Pickup Location") %>
+      <%= collection_select(:query,:responder_id ,@responder.all.order(:address),:id,:address,{:include_blank => 'None'})%>
+      <%= submit_tag "Confirm" , class: "btn btn-primary" %>
+<% end %>
+
+<h3>
