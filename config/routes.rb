@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'pickup/confirmation'
+
+  get 'pickup/deal' , to: "pickup#deal" , as: 'confirm_deal'
   resources :responders
   resources :providers
   get 'index/home'

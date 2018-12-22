@@ -6,9 +6,10 @@
 
 <h2>Passenger Information:</h2><br>
 <h3>Passenger Name: <%= @responder.first.user.email %><h3>
-<%= form_tag(root_path, method: "get") do %>
+<%= form_tag(confirm_deal_path, method: "get") do %>
       <%= label_tag(:q, "Choose Pickup Location") %>
-      <%= collection_select(:query,:responder_id ,@responder.all.order(:address),:id,:address,{:include_blank => 'None'})%>
+      <%= hidden_field_tag(:pro_id, @provider.id)%>
+      <%= collection_select(:responder_id, :address, @responder.all.order(:address),:id,:address,{:include_blank => 'None'})%>
       <%= submit_tag "Confirm" , class: "btn btn-primary" %>
 <% end %>
 
